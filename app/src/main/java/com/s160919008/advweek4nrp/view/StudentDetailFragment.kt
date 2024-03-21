@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.s160919008.advweek4nrp.R
@@ -44,8 +45,19 @@ class StudentDetailFragment : Fragment() {
     }
 
     fun observeViewModel() {
-        viewModel.studentsLD.observe(viewLifecycleOwner, Observer {
-            studentListAdapter.updateStudentList(it)
+        viewModel.studentLD.observe(viewLifecycleOwner, Observer {
+            if (it.id != null){
+                binding.txtID.setText(it.id.toString())
+            }
+            if (it.dob != null){
+                binding.txtBod.setText(it.dob.toString())
+            }
+            if (it.name != null){
+                binding.txtName.setText(it.name.toString())
+            }
+            if (it.phone != null){
+                binding.txtPhone.setText(it.phone.toString())
+            }
         })
     }
 
