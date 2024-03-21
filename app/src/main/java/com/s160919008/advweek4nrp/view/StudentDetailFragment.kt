@@ -49,8 +49,8 @@ class StudentDetailFragment : Fragment() {
             if (it.id != null){
                 binding.txtID.setText(it.id.toString())
             }
-            if (it.dob != null){
-                binding.txtBod.setText(it.dob.toString())
+            if (it.bod != null){
+                binding.txtBod.setText(it.bod.toString())
             }
             if (it.name != null){
                 binding.txtName.setText(it.name.toString())
